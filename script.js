@@ -39,7 +39,7 @@ function blockKeys(e) {
 }
 window.addEventListener("keydown", blockKeys, true);
 
-const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "lumanti"];
+const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "khate"];
 let solved = [false, false, false, false, false, false];
 
 function check(index, inputId) {
