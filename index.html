@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Hidden Flame</title>
+<script src="script.js"></script>
+  <style>
+    body {
+      background-color: #111;
+      color: #f5f5f5;
+      font-family: 'Georgia', serif;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ffd700;
+    }
+    .riddle {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      background: #ffd700;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none; /* 🔄 Change from 'locked' to 'hidden' */
+    }
+    #final-reveal {
+      display: none;
+      background: #333;
+      padding: 20px;
+      border: 1px solid #666;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🧠 The Hidden Flame: Nai Edition 🧠</h1>
+<p style="text-align: center; font-style: italic;">
+  These answers aren't what they seem. Solve each to get closer.
+</p>
+
+<!-- Riddle 1 -->
+<div class="riddle" id="r1">
+  <h2>Riddle 1</h2>
+  <p>
+    Framed in silver, not quite gold,<br />
+    I bring the distant into hold.<br />
+    My real name won't help you win,<br />
+    But the <strong>4th letter's hex</strong> might get you in.
+  </p>
+  <input type="text" id="a1" /><button onclick="check(0, 'a1')">Submit</button>
+  <p id="r1r"></p>
+</div>
+
+<!-- Hidden until Riddle 1 is solved -->
+<div class="riddle hidden" id="r2">
+  <h2>Riddle 2</h2>
+  <p>
+    I’m what you feel but dare not say,<br />
+    The first letter might point the way.<br />
+    Give me its code, not the name,<br />
+    In ASCII digits, earn your fame.
+  </p>
+  <input type="text" id="a2" /><button onclick="check(1, 'a2')">Submit</button>
+  <p id="r2r"></p>
+</div>
+
+<div class="riddle hidden" id="r4">
+  <h2>Riddle 4</h2>
+  <p>
+    I whisper truth in backwards breath,<br />
+    My end becomes a digital death.<br />
+    Flip my face and count the bits,<br />
+    Binary of last reversed hit.
+  </p>
+  <input type="text" id="a4" /><button onclick="check(2, 'a4')">Submit</button>
+  <p id="r4r"></p>
+</div>
+
+<div class="riddle hidden" id="r5">
+  <h2>Riddle 5</h2>
+  <p>
+    In halls where whispers clash with talk,<br>
+    Twinned breaths in shadows softly walk
+  </p>
+  <input type="text" id="a5" /><button onclick="check(3, 'a5')">Submit</button>
+  <p id="r5r"></p>
+</div>
+
+<div class="riddle hidden" id="r6">
+  <h2>Riddle 6</h2>
+  <p>
+    Say it loud, say it proud,<br />
+    Four letters fly into the cloud.<br />
+    Uppercase me, then encode,<br />
+    Base64 will crack this code.
+  </p>
+  <input type="text" id="a6" /><button onclick="check(4, 'a6')">Submit</button>
+  <p id="r6r"></p>
+</div>
+
+<div class="riddle hidden" id="r3">
+  <h2>Final Riddle</h2>
+  <p>
+    Two eyes she owns, shining bright,<br>
+    But in her name, just one in sight. <br>
+    Beauty doubled in the sky so true,  <br>
+    The second one contains you.
+  </p>
+  <input type="text" id="a3" /><button onclick="check(5, 'a3')">Submit</button>
+  <p id="r3r"></p>
+</div>
+
+
+
+</body>
+</html>
