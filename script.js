@@ -1,45 +1,18 @@
+  // Disable right-click
+  window.addEventListener('contextmenu', e => e.preventDefault());
 
-const UNLOCK_SECONDS = 100 * 60 * 60;
+  // Disable specific key combinations
+  window.addEventListener('keydown', e => {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.key === "u") ||
+      (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase()))
+    ) {
+      e.preventDefault();
+    }
+  });
 
-function getElapsedTime() {
-  return parseInt(localStorage.getItem("elapsedTime") || "0");
-}
-
-function setElapsedTime(seconds) {
-  localStorage.setItem("elapsedTime", seconds.toString());
-}
-
-let elapsedTime = getElapsedTime();
-
-const timer = setInterval(() => {
-  elapsedTime += 1;
-  setElapsedTime(elapsedTime);
-
-  if (elapsedTime >= UNLOCK_SECONDS) {
-    window.removeEventListener("contextmenu", blockContextMenu, true);
-    window.removeEventListener("keydown", blockKeys, true);
-    console.log("🔓 Dev tools and right-click enabled after 100 hours!");
-    clearInterval(timer);
-  }
-}, 1000);
-
-function blockContextMenu(e) {
-  e.preventDefault();
-}
-window.addEventListener("contextmenu", blockContextMenu, true);
-
-function blockKeys(e) {
-  if (
-    e.key === "F12" || 
-    (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
-    (e.ctrlKey && e.key === "U")
-  ) {
-    e.preventDefault();
-  }
-}
-window.addEventListener("keydown", blockKeys, true);
-
-const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "khate"];
+const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "Suraksha"];
 let solved = [false, false, false, false, false, false];
 
 function check(index, inputId) {
