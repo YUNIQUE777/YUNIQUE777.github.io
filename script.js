@@ -12,7 +12,7 @@
     }
   });
 
-const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "Suraksha"];
+const correct = ["73", "99", "01111001", "2", "TE9WRQ==", "suraksha"];
 let solved = [false, false, false, false, false, false];
 
 function check(index, inputId) {
@@ -22,7 +22,7 @@ function check(index, inputId) {
   if (index === 5) {
     if (val.toLowerCase() === correct[index]) {
       solved[index] = true;
-      document.getElementById(resultId).innerText = "✅ Correct! You found her name!";
+      document.getElementById(resultId).innerText = "✅ Nah Bro It is lumanti after all!!";
       document.getElementById(inputId).disabled = true;
       document.getElementById(inputId).style.backgroundColor = "#333";
       document.getElementById("final-reveal").style.display = "block";
